@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/mobilefirst-faq-accordion-card-with-sass-fEUro54g2](https://www.frontendmentor.io/solutions/mobilefirst-faq-accordion-card-with-sass-fEUro54g2)
+- Live Site URL: [https://dentednerd.github.io/fm-accordion-sass/](https://dentednerd.github.io/fm-accordion-sass/)
 
 ## My process
 
@@ -46,7 +46,7 @@ Kept the Javascript minimal:
 
 ```js
 function onClick() {
-  const thisItem = event.target.parentNode;
+  var thisItem = event.target.parentNode;
   thisItem.classList.toggle("open");
 };
 ```

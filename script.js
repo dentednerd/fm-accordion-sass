@@ -1,4 +1,4 @@
 function onClick() {
-  const thisItem = event.target.parentNode;
+  var thisItem = event.target.parentNode;
   thisItem.classList.toggle("open");
 };
