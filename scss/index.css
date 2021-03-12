@@ -1,0 +1,249 @@
+:root {
+  --text-primary-blue: hsl(238, 29%, 16%);
+  --text-primary-red: hsl(14, 88%, 65%);
+  --text-neutral-vdark: hsl(237, 12%, 33%);
+  --text-neutral-dark: hsl(240, 6%, 50%);
+  --bg-violet: hsl(273, 75%, 66%);
+  --bg-blue: hsl(240, 73%, 65%);
+  --divider-blue: hsl(240, 5%, 91%);
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 16px;
+  min-height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--bg-violet)), to(var(--bg-blue)));
+  background-image: linear-gradient(var(--bg-violet), var(--bg-blue));
+  background-attachment: fixed;
+  color: var(--text-primary-blue);
+}
+
+body h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+  color: var(--text-neutral-vdark);
+}
+
+body button:focus {
+  border: none;
+  outline: none;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 2rem;
+  min-width: 25rem;
+  max-width: 56rem;
+  margin: calc(25% + 2rem) 2rem;
+  padding: 0;
+  -webkit-box-shadow: 0 1rem 2rem var(--text-primary-blue);
+          box-shadow: 0 1rem 2rem var(--text-primary-blue);
+}
+
+.card .floating-box {
+  display: none;
+}
+
+.card .illustration {
+  height: 6.5rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/bg-pattern-mobile.svg");
+  background-size: 14rem auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.card .illustration img.mobile {
+  width: 15rem;
+  -webkit-transform: translateX(-1rem) translateY(calc(-50% - 0.5rem));
+          transform: translateX(-1rem) translateY(calc(-50% - 0.5rem));
+}
+
+.card .illustration img.desktop {
+  display: none;
+}
+
+.card .content {
+  padding: 0 1.5rem 3rem 1.5rem;
+}
+
+.card .content .accordion .item {
+  border-bottom: solid 1px var(--divider-blue);
+}
+
+.card .content .accordion .item button.question {
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 1.25rem 0 1rem;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 1.125rem;
+  text-align: left;
+  color: var(--text-neutral-vdark);
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+.card .content .accordion .item button.question:hover {
+  color: var(--text-primary-red);
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+.card .content .accordion .item button.question::after {
+  content: '';
+  display: block;
+  height: 0.625rem;
+  width: 0.625rem;
+  background-image: url("../images/icon-arrow-down.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.card .content .accordion .item .answer {
+  height: 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  line-height: 1.5rem;
+  padding: 0;
+  color: var(--text-neutral-dark);
+}
+
+.card .content .accordion .item.open button.question {
+  font-weight: 700;
+  color: var(--text-neutral-vdark);
+}
+
+.card .content .accordion .item.open button.question::after {
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.card .content .accordion .item.open .answer {
+  height: auto;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  padding: 0 0 1rem;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+@media (min-width: 800px) {
+  .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(100% - 6rem);
+    max-width: 56rem;
+    margin: 6rem auto;
+    position: relative;
+    background-image: none;
+  }
+  .card .floating-box {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateX(-55%) translateY(-30%);
+            transform: translateX(-55%) translateY(-30%);
+    z-index: 3;
+  }
+  .card .illustration {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    padding: 0 3rem 0 0;
+    height: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-image: url("../images/bg-pattern-desktop.svg");
+    padding-right: 5.75rem;
+    background-size: initial;
+    background-repeat: no-repeat;
+    background-position: -37rem center;
+    overflow: hidden;
+  }
+  .card .illustration img.mobile {
+    display: none;
+  }
+  .card .illustration img.desktop {
+    display: block;
+    margin: 0;
+    padding: 0;
+    -webkit-transform: translateX(-6rem);
+            transform: translateX(-6rem);
+  }
+  .card .content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 3rem 2rem;
+  }
+  .card .content h1 {
+    text-align: left;
+  }
+}
+
+.attribution {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  min-width: 25rem;
+}
+
+.attribution a {
+  color: var(--text-primary-red);
+  text-decoration: none;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+.attribution a:hover {
+  color: var(--divider-blue);
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+/*# sourceMappingURL=index.css.map */
