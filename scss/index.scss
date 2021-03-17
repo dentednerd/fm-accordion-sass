@@ -8,8 +8,13 @@
   --divider-blue: hsl(240, 5%, 91%);
 }
 
-html {
+*, *::after, *::before {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
   font-size: 100%;
 }
 
